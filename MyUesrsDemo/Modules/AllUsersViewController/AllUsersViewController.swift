@@ -91,7 +91,5 @@ extension AllUsersViewController: AllUsersModelOutput {
             print(err!)
         }
     }
-    
-    
 }
 

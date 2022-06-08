@@ -55,6 +55,14 @@ class AllUsersViewModelTests: XCTestCase {
         XCTAssertEqual(mockOutput.error.localizedDescription, "The operation couldn’t be completed. ( error 10.)")
         //XCTAssertEqual(mockOutput.userArray[0].name, "MS John")
     }
+    
+    func testModelMapping() {
+        let objCsv1 = HomeUsersModelElement(name: "MS John", rollNo: 11, division: "7", city: "Bangalore", dob: "01/02/1978")
+        let objCsv2 = HomeUsersModelElement(name: "IP Head", rollNo: 24, division: "8", city: "Pune", dob: "01/02/1982")
+        let allUsers = [objCsv1, objCsv2]
+        let allViewModel = sut.mapAllUsersModelToViewModel(allUsers)
+        XCTAssertNotNil(allViewModel)
+    }
 }
 
 class MockFetchAPIData: FetchAPIData {
